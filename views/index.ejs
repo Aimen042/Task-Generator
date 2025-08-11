@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Generator</title>
+    <link href="/src/output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900 min-h-screen">
+
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+
+    <div class="content">
+        <h1 class="text-gray-500 text-5xl flex justify-center items-center pt-5 mt-14 font-bold">TASK GENERATOR</h1>
+        <div class="mx-auto w-[90%] max-w-4xl">
+            <!--FORM-->
+            <div class="bg-gray-800 mt-10 flex flex-col rounded-md">
+                <form class="text-white px-7 pt-8" action="/create" method="post">
+                    <input class="block mb-4 w-full rounded-sm border-2 p-3 border-gray-500" type="text"
+                        placeholder="Write Your Task" name="title">
+                    <textarea class="block mb-4 resize-none w-full rounded-sm border-2 border-gray-500 p-3"
+                        placeholder="Description of Your Task" name="details"></textarea>
+                    <input class="p-3 mt-6 bg-gray-600 hover:bg-gray-700 rounded-md cursor-pointer mb-12" type="submit"
+                        value="Submit Task">
+                </form>
+            </div>
+            <!--Tasks-->
+            <div class="flex flex-row flex-wrap text-white mt-8 gap-4">
+                <% if (files.length> 0){ %>
+                    <% files.forEach(function(val){ %>
+                        <div class="bg-gray-800 py-2 px-3 w-72 rounded-md">
+                            <h1><%= val %></h1>
+                            <a class="mt-2 text-blue-200 cursor-pointer hover:text-blue-300" href="/files/<%= val %>">Read More</a>
+                        </div>
+                    <%}) %>
+                <% } else { %>
+                    <h1 class="text-blue-200 mt-7 text-xl">No Tasks Yet</h1>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

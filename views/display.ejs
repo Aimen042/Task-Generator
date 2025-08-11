@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Generator</title>
+    <link href="/src/output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900 min-h-screen overflow-hidden">
+    <!-- Galaxy Background Layers -->
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1 class="text-gray-500 text-3xl md:text-5xl flex justify-center items-center pt-12 font-bold">TASK INFORMATION</h1>
+        <div class="mx-auto w-[70%] bg-gray-800 text-white mt-16 px-7 py-5">
+            <a class="text-blue-200 cursor-pointer hover:text-blue-300" href="/">Go Back To Main Page</a>
+            <h1 class="mb-5 mt-8 font-bold text-gray-400 text-xl"><%= filename %></h1>
+            <p class="pb-3 text-gray-300"><%= filedata %></p>
+        </div>
+    </div>
+
+</body>
+
+</html>
